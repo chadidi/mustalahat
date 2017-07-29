@@ -6,8 +6,8 @@
           <router-link class="navbar-brand" to="/">Mustalahat</router-link>
         </div>
         <ul class="nav navbar-nav navbar-right">
-          <li class="btn btn-default" style="margin-top: 12px;">
-            <span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"></span>
+          <li class="btn btn-default" data-toggle="modal" data-target="#myModal" style="margin-top: 12px;">
+            <span class="glyphicon glyphicon-plus"></span>
           </li>
         </ul>
       </div>
