@@ -5,7 +5,11 @@
         <div class="navbar-header">
           <router-link class="navbar-brand" to="/">Mustalahat</router-link>
         </div>
-
+        <ul class="nav navbar-nav navbar-right">
+          <li class="btn btn-default" style="margin-top: 12px;">
+            <span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"></span>
+          </li>
+        </ul>
       </div>
     </nav>
     <router-view :trans="trans"></router-view>
@@ -32,6 +36,24 @@ export default {
   firebase: {
     trans: transRef
   },
+  mounted() {
+    toastr.options = {
+      "closeButton": true,
+      "debug": false,
+      "newestOnTop": true,
+      "progressBar": true,
+      "positionClass": "toast-bottom-center",
+      "preventDuplicates": false,
+      "showDuration": "500",
+      "hideDuration": "500",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+  },
   methods: {
     saveTrans(tran){
       if (!tran['.key']) {
@@ -43,12 +65,12 @@ export default {
           arname: tran.arname
         }
         transRef.child(tran['.key']).update(trans);
-        toastr.success('translation updated successfully')
+        toastr.success('translation updated successfully', {"positionClass": "toast-bottom-right"})
       }
     },
     removeTrans(tran) {
       transRef.child(tran['.key']).remove();
-      toastr.success('translation removed successfully')
+      toastr.success('translation removed successfully', {"positionClass": "toast-bottom-right"})
     }
   }
 }
