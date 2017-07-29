@@ -16,7 +16,7 @@
               </div><!-- /.col-lg-6 -->
               <div class="col-md-6">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Arabic Translation" v-model="tran.arname">
+                  <input type="text" class="form-control" placeholder="الترجمة العربية" v-model="tran.arname" dir="rtl">
                 </div><!-- /input-group -->
               </div><!-- /.col-lg-6 -->
             </div><!-- /.row -->
