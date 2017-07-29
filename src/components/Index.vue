@@ -79,6 +79,12 @@ export default {
       }
     }
   },
+  mounted(){
+    let vm = this;
+    $('#myModal').on('hidden.bs.modal', function (e) {
+      vm.tran = {};
+    })
+  },
   methods: {
     paginate (array) {
       let per_page = this.pagination.per_page
@@ -92,7 +98,6 @@ export default {
     },
     saveTrans(){
       this.$parent.saveTrans(this.tran);
-      this.tran = {};
       $('#myModal').modal('hide');
     }
   },
